@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --background: #030712; /* Obsidian Black */
+  --foreground: #F8FAFC; /* Ultra-bright Pure White */
+  
+  --surface: rgba(15, 23, 42, 0.65); /* Glassmorphism */
+  --surface-border: rgba(30, 41, 59, 0.8);
+  
+  --accent-neon: #FF2A5F; /* Neon Crimson */
+  --accent-cyan: #00F5D4; /* Electric Cyan */
+  --warning: #FFB703; /* Amber Gold */
+  --success: #10B981; /* Emerald Mint */
+  --text-muted: #64748B; /* Muted Slate Grey */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.glass-panel {
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--surface-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.neon-glow-red {
+  box-shadow: 0 0 15px rgba(255, 42, 95, 0.5);
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 245, 212, 0.4);
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(90deg, #00F5D4, #3B82F6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Map Tile Dark Mode Filter */
+.leaflet-tile-pane {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+/* Live feed ticker */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Leaflet popups match the dark theme */
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: #0f172a; box-shadow: none; }
+.leaflet-popup-content { margin: 4px; }
